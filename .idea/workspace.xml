@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="64b3fc83-c250-4716-8973-6ce9b4d01dd2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controller/CurrencyConverterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/currency/CurrencyConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/currency/CurrencyConverterMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/currency_code/CurrencyCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/domain/currency_code/CurrencyCodeRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/ArchiveGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/util/JsonParser.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/domain/currency/dto/CurrencyConverterDto.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Conversor de Monedas.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Conversor de Monedas.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CurrencyConverterApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/monedas_convertidas.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controller/CurrencyConverterController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/controller/CurrencyConverterController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/domain/currency/CurrencyConverterMenu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/domain/currency/CurrencyConverterMenu.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,27 +21,28 @@
       <list>
         <option value="package-info" />
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "AngelPuentesDevv"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;AngelPuentesDevv&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/AngelPuentesDevv/Conversor-de-Monedas",
-    "accountId": "b4ba9172-7b91-4f34-a918-24837086678d"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/AngelPuentesDevv/Conversor-de-Monedas&quot;,
+    &quot;accountId&quot;: &quot;b4ba9172-7b91-4f34-a918-24837086678d&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2pJajjfLQGxWmaxysb44v60t1B6" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -61,7 +56,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/Angel Puentes/Downloads/agrotech_backend",
+    "last_opened_file_path": "C:/Users/Angel Puentes/Downloads/Oracle ONE/Java/Conversor de Monedas",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -122,7 +117,10 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1732486771674</updated>
-      <workItem from="1732486772756" duration="10177000" />
+      <workItem from="1732486772756" duration="10532000" />
+      <workItem from="1732547208125" duration="255000" />
+      <workItem from="1732568318732" duration="6929000" />
+      <workItem from="1732576352813" duration="1242000" />
     </task>
     <servers />
   </component>

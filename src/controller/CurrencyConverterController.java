@@ -1,5 +1,8 @@
 package controller;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonSyntaxException;
+import domain.currency.dto.CurrencyConverterDto;
 import domain.currency_code.CurrencyCodeRepository;
 
 import java.io.IOException;
@@ -12,9 +15,11 @@ public class CurrencyConverterController {
 
     private static final String URL_BASE = "https://v6.exchangerate-api.com/v6/a582d4218e79398607eecb06";
     private final HttpClient client;
+    private final Gson gson;
 
     public CurrencyConverterController() {
         this.client = HttpClient.newHttpClient();
+        this.gson = new Gson();
     }
 
     private String sendRequest(String endpoint) throws IOException, InterruptedException {
@@ -22,23 +27,37 @@ public class CurrencyConverterController {
                 .uri(URI.create(URL_BASE + endpoint))
                 .build();
         HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());
-        return response.body();
+        String jsonResponse = response.body();
+        System.out.println("Respuesta: " + jsonResponse);
+        return jsonResponse;
     }
 
-    public String conversion(String baseCode) throws IOException, InterruptedException {
-        return sendRequest("/latest/"+baseCode);
+    public CurrencyConverterDto conversion(String baseCode) throws IOException, InterruptedException {
+        String jsonResponse = sendRequest("latest/" + baseCode);
+        return deserializeJson(jsonResponse);
     }
 
-    public String conversionPar(String baseCode, String targetCode) throws IOException, InterruptedException {
-        return sendRequest("/pair/"+baseCode+"/"+targetCode);
+    public CurrencyConverterDto conversionPar(String baseCode, String targetCode) throws IOException, InterruptedException {
+        String jsonResponse = sendRequest("/pair/" + baseCode + "/" + targetCode);
+        return deserializeJson(jsonResponse);
     }
 
-    public String conversionParMonto(String baseCode, String targetCode, Double conversionRate) throws IOException, InterruptedException {
-        return sendRequest("/pair/"+baseCode+"/"+targetCode+"/"+conversionRate);
+    public CurrencyConverterDto conversionParMonto(String baseCode, String targetCode, Double conversionRate) throws IOException, InterruptedException {
+        String jsonResponse = sendRequest("/pair/" + baseCode + "/" + targetCode + "/" + conversionRate);
+        return deserializeJson(jsonResponse);
     }
 
     public void printSupportedCodes() {
         CurrencyCodeRepository.getAllCurrencyCodes().values().forEach(System.out::println);
+    }
+
+    private CurrencyConverterDto deserializeJson(String jsonResponse) {
+        try {
+            return gson.fromJson(jsonResponse, CurrencyConverterDto.class);
+        } catch (JsonSyntaxException e) {
+            System.err.println("Failed to deserialize JSON: " + e.getMessage());
+            return null;
+        }
     }
 
 }

@@ -3,6 +3,7 @@ package domain.currency;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import controller.CurrencyConverterController;
+import domain.currency.dto.CurrencyConverterDto;
 import util.ArchiveGenerator;
 
 import java.io.IOException;
@@ -15,7 +16,6 @@ public class CurrencyConverterMenu {
         Scanner lectura = new Scanner(System.in);
         CurrencyConverterController controller = new CurrencyConverterController();
         Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        ArchiveGenerator jsonGenerator = new ArchiveGenerator();
 
         boolean continuar = true;
         while (continuar) {
@@ -33,18 +33,18 @@ public class CurrencyConverterMenu {
             switch (opcion) {
                 case 1:
                     System.out.println("Por favor, indique el código de la moneda que desea convertir: ");
-                    String conversion = controller.conversion(lectura.nextLine());
+                    CurrencyConverterDto conversion = controller.conversion(lectura.nextLine());
                     System.out.println(gson.toJson(conversion));
-                    ArchiveGenerator.saveJson(conversion);
+                    ArchiveGenerator.saveJson(gson.toJson(conversion));
                     break;
                 case 2:
                     System.out.println("Por favor, indique la moneda base: ");
                     String baseCode = lectura.nextLine();
                     System.out.println("Ahora indique la moneda objetivo: ");
                     String targetCode = lectura.nextLine();
-                    String conversionPar = controller.conversionPar(baseCode, targetCode);
+                    CurrencyConverterDto conversionPar = controller.conversionPar(baseCode, targetCode);
                     System.out.println(gson.toJson(conversionPar));
-                    ArchiveGenerator.saveJson(conversionPar);
+                    ArchiveGenerator.saveJson(gson.toJson(conversionPar));
                     break;
                 case 3:
                     System.out.println("Por favor, indique la moneda base: ");
@@ -54,9 +54,9 @@ public class CurrencyConverterMenu {
                     System.out.println("Por último, indique el monto a convertir: ");
                     double amount = lectura.nextDouble();
                     lectura.nextLine();
-                    String conversionParMonto = controller.conversionParMonto(baseCode, targetCode, amount);
+                    CurrencyConverterDto conversionParMonto = controller.conversionParMonto(baseCode, targetCode, amount);
                     System.out.println(gson.toJson(conversionParMonto));
-                    ArchiveGenerator.saveJson(conversionParMonto);
+                    ArchiveGenerator.saveJson(gson.toJson(conversionParMonto));
                     break;
                 case 4:
                     System.out.println("Los códigos soportados son: ");
